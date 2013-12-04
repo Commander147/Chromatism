@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Anviking. All rights reserved.
 //
 
-#import <Chromatism/Chromatism.h>
+#import "JLCTokenizer.h"
 
-@interface JLObjectiveCTokenizer : JLTokenizer
+@interface JLObjectiveCTokenizer : JLCTokenizer
 
 @end

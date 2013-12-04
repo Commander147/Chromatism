@@ -25,6 +25,8 @@
 #import <UIKit/UIKit.h>
 #import "JLScope.h"
 #import "JLTokenizer.h"
+#import "JLObjectiveCTokenizer.h"
+#import "JLCTokenizer.h"
 #import "JLTextViewController.h"
 #import "JLTokenPattern.h"
 #import "JLTextView.h"

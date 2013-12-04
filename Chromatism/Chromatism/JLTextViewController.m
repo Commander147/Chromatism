@@ -66,7 +66,7 @@
 
 - (JLTokenizer *)tokenizer
 {
-    return self.textView.tokenizer;
+    return self.textView.syntaxTokenizer;
 }
 
 - (void)viewDidLoad
