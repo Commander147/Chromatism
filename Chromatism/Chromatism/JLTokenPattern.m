@@ -64,7 +64,11 @@ static NSCache *cache;
     [set enumerateRangesUsingBlock:^(NSRange range, BOOL *stop) {
         [self.expression enumerateMatchesInString:self.string options:self.matchingOptions range:range usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.textStorage addAttributes:attributes range:[result rangeAtIndex:self.captureGroup]];
+                NSRange range = [result rangeAtIndex:self.captureGroup];
+                
+                // TODO: No matches should be found beyond the bounds of the textStorage anyways.
+                range = NSIntersectionRange(range, NSMakeRange(0, self.textStorage.length));
+                [self.textStorage addAttributes:attributes range:range];
             });
             [self.set addIndexesInRange:[result rangeAtIndex:self.captureGroup]];
         }];
