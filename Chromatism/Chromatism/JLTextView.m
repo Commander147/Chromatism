@@ -71,7 +71,7 @@
 {
     // Setup tokenizer
     self.syntaxTokenizer = [[JLTokenizer alloc] init];
-    self.theme = JLTokenizerThemeDusk;
+    self.theme = JLTokenizerThemeDefault;
     
     // Set default properties
     self.scrollEnabled = YES;
