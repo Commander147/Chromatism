@@ -23,7 +23,7 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.//
 
 #import "JLTokenPattern.h"
-#import "Helpers.h"
+#import "NSIndexSet+JLAdditions.h"
 
 @interface JLScope ()
 - (BOOL)shouldPerform;

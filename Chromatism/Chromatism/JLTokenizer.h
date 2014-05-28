@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Helpers.h"
 #import "Chromatism+Internal.h"
 #import "JLScope.h"
 #import "JLTokenPattern.h"

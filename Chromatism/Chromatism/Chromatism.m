@@ -23,7 +23,7 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.//
 
 #import "Chromatism+Internal.h"
-#import "Helpers.h"
+#import "ChromatismMacros.h"
 
 NSString *const JLTokenTypeText = @"text";
 NSString *const JLTokenTypeBackground = @"background";
@@ -53,53 +53,54 @@ NSString *const JLDiffColorAttributeName = @"diff_color_attribute_name";
 
 @implementation Chromatism
 
+
 + (NSDictionary *)colorsForTheme:(JLTokenizerTheme)theme
 {
     NSDictionary* colors;
     switch(theme) {
         case JLTokenizerThemeDefault:
-            colors = @{JLTokenTypeText: [UIColor colorWithRed:0.0/255 green:0.0/255 blue:0.0/255 alpha:1],
-                       JLTokenTypeBackground: [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:1],
-                       JLTokenTypeComment: [UIColor colorWithRed:0.0/255 green:131.0/255 blue:39.0/255 alpha:1],
-                       JLTokenTypeDocumentationComment: [UIColor colorWithRed:0.0/255 green:131.0/255 blue:39.0/255 alpha:1],
-                       JLTokenTypeDocumentationCommentKeyword: [UIColor colorWithRed:0.0/255 green:76.0/255 blue:29.0/255 alpha:1],
-                       JLTokenTypeString: [UIColor colorWithRed:211.0/255 green:45.0/255 blue:38.0/255 alpha:1],
-                       JLTokenTypeCharacter: [UIColor colorWithRed:40.0/255 green:52.0/255 blue:206.0/255 alpha:1],
-                       JLTokenTypeNumber: [UIColor colorWithRed:40.0/255 green:52.0/255 blue:206.0/255 alpha:1],
-                       JLTokenTypeKeyword: [UIColor colorWithRed:188.0/255 green:49.0/255 blue:156.0/255 alpha:1],
-                       JLTokenTypePreprocessor: [UIColor colorWithRed:120.0/255 green:72.0/255 blue:48.0/255 alpha:1],
-                       JLTokenTypeURL: [UIColor colorWithRed:21.0/255 green:67.0/255 blue:244.0/255 alpha:1],
-                       JLTokenTypeOther: [UIColor colorWithRed:113.0/255 green:65.0/255 blue:163.0/255 alpha:1],
-                       JLTokenTypeOtherMethodNames :  [UIColor colorWithHex:@"7040a6" alpha:1],
-                       JLTokenTypeOtherClassNames :  [UIColor colorWithHex:@"7040a6" alpha:1],
-                       JLTokenTypeProjectClassNames : [UIColor colorWithRed:63.0/255 green:110.0/255 blue:116.0/255 alpha:1],
-                       JLTokenTypeProjectMethodNames : [UIColor colorWithRed:38.0/255 green:71.0/255 blue:75.0/255 alpha:1],
+            colors = @{JLTokenTypeText:                         [UIColor whiteColor],
+                       JLTokenTypeBackground:                   UIColorRGB(255, 255, 255),
+                       JLTokenTypeComment:                      UIColorRGB(0, 131, 39),
+                       JLTokenTypeDocumentationComment:         UIColorRGB(0, 131, 39),
+                       JLTokenTypeDocumentationCommentKeyword:  UIColorRGB(0, 76, 29),
+                       JLTokenTypeString:                       UIColorRGB(211, 45, 38),
+                       JLTokenTypeCharacter:                    UIColorRGB(40, 52, 206),
+                       JLTokenTypeNumber:                       UIColorRGB(40, 52, 206),
+                       JLTokenTypeKeyword:                      UIColorRGB(188, 49, 156),
+                       JLTokenTypePreprocessor:                 UIColorRGB(120, 72, 48),
+                       JLTokenTypeURL:                          UIColorRGB(21, 67, 244),
+                       JLTokenTypeOther:                        UIColorRGB(113, 65, 163),
+                       JLTokenTypeOtherMethodNames :            UIColorRGB(112, 64, 166),
+                       JLTokenTypeOtherClassNames :             UIColorRGB(112, 64, 166),
+                       JLTokenTypeProjectClassNames :           UIColorRGB(63, 110, 116),
+                       JLTokenTypeProjectMethodNames :          UIColorRGB(38, 71, 75),
                        
-                       JLTokenTypeDiffAddition : [UIColor greenColor],
-                       JLTokenTypeDiffDeletion : [UIColor redColor]
+                       JLTokenTypeDiffAddition :                [UIColor greenColor],
+                       JLTokenTypeDiffDeletion :                [UIColor redColor]
                        
                        };
             break;
         case JLTokenizerThemeDusk:
-            colors = @{JLTokenTypeText: [UIColor whiteColor],
-                       JLTokenTypeBackground: [UIColor colorWithRed:30.0/255.0 green:32.0/255.0 blue:40.0/255.0 alpha:1],
-                       JLTokenTypeComment: [UIColor colorWithRed:72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
-                       JLTokenTypeDocumentationComment: [UIColor colorWithRed:72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
-                       JLTokenTypeDocumentationCommentKeyword: [UIColor colorWithRed:72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
-                       JLTokenTypeString: [UIColor colorWithRed:230.0/255 green:66.0/255 blue:75.0/255 alpha:1],
-                       JLTokenTypeCharacter: [UIColor colorWithRed:139.0/255 green:134.0/255 blue:201.0/255 alpha:1],
-                       JLTokenTypeNumber: [UIColor colorWithRed:139.0/255 green:134.0/255 blue:201.0/255 alpha:1],
-                       JLTokenTypeKeyword: [UIColor colorWithRed:195.0/255 green:55.0/255 blue:149.0/255 alpha:1],
-                       JLTokenTypePreprocessor: [UIColor colorWithRed:198.0/255.0 green:124.0/255.0 blue:72.0/255.0 alpha:1],
-                       JLTokenTypeURL: [UIColor colorWithRed:35.0/255 green:63.0/255 blue:208.0/255 alpha:1],
-                       JLTokenTypeOther: [UIColor colorWithRed:0.0/255 green:175.0/255 blue:199.0/255 alpha:1],
-                       JLTokenTypeOtherClassNames :  [UIColor colorWithHex:@"04afc8" alpha:1],
-                       JLTokenTypeOtherMethodNames :  [UIColor colorWithHex:@"04afc8" alpha:1],
-                       JLTokenTypeProjectMethodNames : [UIColor colorWithRed:131.0/255 green:192.0/255 blue:87.0/255 alpha:1],
-                       JLTokenTypeProjectClassNames : [UIColor colorWithRed:131.0/255 green:192.0/255 blue:87.0/255 alpha:1],
+            colors = @{JLTokenTypeText:                         [UIColor whiteColor],
+                       JLTokenTypeBackground:                   UIColorRGB(30, 32, 40),
+                       JLTokenTypeComment:                      UIColorRGB(72, 190, 102),
+                       JLTokenTypeDocumentationComment:         UIColorRGB(72, 190, 102),
+                       JLTokenTypeDocumentationCommentKeyword:  UIColorRGB(72, 190, 102),
+                       JLTokenTypeString:                       UIColorRGB(230, 66, 75),
+                       JLTokenTypeCharacter:                    UIColorRGB(139, 134, 201),
+                       JLTokenTypeNumber:                       UIColorRGB(139, 134, 201),
+                       JLTokenTypeKeyword:                      UIColorRGB(195, 55, 149),
+                       JLTokenTypePreprocessor:                 UIColorRGB(198, 124, 72),
+                       JLTokenTypeURL:                          UIColorRGB(35, 63, 208),
+                       JLTokenTypeOther:                        UIColorRGB(0, 175, 199),
+                       JLTokenTypeOtherClassNames :             UIColorRGB(4,175,200),
+                       JLTokenTypeOtherMethodNames :            UIColorRGB(4,175,200),
+                       JLTokenTypeProjectMethodNames :          UIColorRGB(131, 192, 87),
+                       JLTokenTypeProjectClassNames :           UIColorRGB(131, 192, 87),
                        
-                       JLTokenTypeDiffAddition : [UIColor greenColor],
-                       JLTokenTypeDiffDeletion : [UIColor redColor]
+                       JLTokenTypeDiffAddition :                [UIColor greenColor],
+                       JLTokenTypeDiffDeletion :                [UIColor redColor]
                        
                        };
             break;

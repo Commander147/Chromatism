@@ -10,8 +10,10 @@
 		32102EE117A948F900CFA161 /* Chromatism+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 32102EE017A948F900CFA161 /* Chromatism+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32102EED17A95E2900CFA161 /* demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32102EEB17A95E2900CFA161 /* demo.txt */; };
 		32102EEE17A95E2900CFA161 /* description.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32102EEC17A95E2900CFA161 /* description.txt */; };
-		3260A15417A8845F008792E6 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB94E1781C1250023348A /* Helpers.m */; };
 		3260A15617A884EC008792E6 /* JLTokenizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260A15517A884EC008792E6 /* JLTokenizerTests.m */; };
+		8F0F627A193658F600E8F781 /* NSIndexSet+JLAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0F6278193658F600E8F781 /* NSIndexSet+JLAdditions.h */; };
+		8F0F627B193658F600E8F781 /* NSIndexSet+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6279193658F600E8F781 /* NSIndexSet+JLAdditions.m */; };
+		8F0F627D19365A7B00E8F781 /* ChromatismMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0F627C19365A7B00E8F781 /* ChromatismMacros.h */; };
 		8F391713184FAC640022D33F /* JLCTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F391711184FAC640022D33F /* JLCTokenizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F391714184FAC640022D33F /* JLCTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F391712184FAC640022D33F /* JLCTokenizer.m */; };
 		8F3AB92A1781C0BA0023348A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3AB9291781C0BA0023348A /* XCTest.framework */; };
@@ -22,13 +24,11 @@
 		8F3AB9381781C0BB0023348A /* ChromatismTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB9371781C0BB0023348A /* ChromatismTests.m */; };
 		8F3AB9621781C26A0023348A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3AB9611781C26A0023348A /* UIKit.framework */; };
 		8F54EF0E1781C776008C1609 /* Chromatism.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3AB9201781C0BA0023348A /* Chromatism.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F54EF101781C788008C1609 /* Helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3AB94D1781C1250023348A /* Helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F54EF111781C788008C1609 /* JLScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3AB94F1781C1250023348A /* JLScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F54EF131781C788008C1609 /* JLTextViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3AB9531781C1250023348A /* JLTextViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F54EF141781C788008C1609 /* JLTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3AB9551781C1250023348A /* JLTokenizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F54EF151781C788008C1609 /* JLTokenPattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3AB9571781C1250023348A /* JLTokenPattern.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F54EF1E1781CD87008C1609 /* Chromatism.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB9221781C0BA0023348A /* Chromatism.m */; };
-		8F54EF1F1781CD87008C1609 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB94E1781C1250023348A /* Helpers.m */; };
 		8F54EF201781CD87008C1609 /* JLScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB9501781C1250023348A /* JLScope.m */; };
 		8F54EF221781CD87008C1609 /* JLTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB9541781C1250023348A /* JLTextViewController.m */; };
 		8F54EF231781CD87008C1609 /* JLTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AB9561781C1250023348A /* JLTokenizer.m */; };
@@ -60,21 +60,22 @@
 		32102EEB17A95E2900CFA161 /* demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = demo.txt; path = bundle.bundle/demo.txt; sourceTree = "<group>"; };
 		32102EEC17A95E2900CFA161 /* description.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = description.txt; path = bundle.bundle/description.txt; sourceTree = "<group>"; };
 		3260A15517A884EC008792E6 /* JLTokenizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTokenizerTests.m; sourceTree = "<group>"; };
+		8F0F6278193658F600E8F781 /* NSIndexSet+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+JLAdditions.h"; sourceTree = "<group>"; };
+		8F0F6279193658F600E8F781 /* NSIndexSet+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+JLAdditions.m"; sourceTree = "<group>"; };
+		8F0F627C19365A7B00E8F781 /* ChromatismMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChromatismMacros.h; sourceTree = "<group>"; };
 		8F391711184FAC640022D33F /* JLCTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLCTokenizer.h; path = ../../../Chromatism/Chromatism/Chromatism/JLCTokenizer.h; sourceTree = "<group>"; };
 		8F391712184FAC640022D33F /* JLCTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLCTokenizer.m; path = ../../../Chromatism/Chromatism/Chromatism/JLCTokenizer.m; sourceTree = "<group>"; };
 		8F3AB9181781C0BA0023348A /* libChromatism.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChromatism.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3AB91B1781C0BA0023348A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F3AB91F1781C0BA0023348A /* Chromatism-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chromatism-Prefix.pch"; sourceTree = "<group>"; };
 		8F3AB9201781C0BA0023348A /* Chromatism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chromatism.h; sourceTree = "<group>"; };
-		8F3AB9221781C0BA0023348A /* Chromatism.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chromatism.m; sourceTree = "<group>"; };
+		8F3AB9221781C0BA0023348A /* Chromatism.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Chromatism.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8F3AB9281781C0BA0023348A /* ChromatismTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChromatismTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3AB9291781C0BA0023348A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8F3AB92C1781C0BB0023348A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F3AB9331781C0BB0023348A /* ChromatismTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChromatismTests-Info.plist"; sourceTree = "<group>"; };
 		8F3AB9351781C0BB0023348A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F3AB9371781C0BB0023348A /* ChromatismTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChromatismTests.m; sourceTree = "<group>"; };
-		8F3AB94D1781C1250023348A /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
-		8F3AB94E1781C1250023348A /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		8F3AB94F1781C1250023348A /* JLScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLScope.h; sourceTree = "<group>"; };
 		8F3AB9501781C1250023348A /* JLScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLScope.m; sourceTree = "<group>"; };
 		8F3AB9531781C1250023348A /* JLTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTextViewController.h; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 			children = (
 				8F3AB95F1781C12F0023348A /* test.json */,
 				8F3AB91F1781C0BA0023348A /* Chromatism-Prefix.pch */,
+				8F0F627C19365A7B00E8F781 /* ChromatismMacros.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -221,8 +223,8 @@
 				8F3AB9201781C0BA0023348A /* Chromatism.h */,
 				32102EE017A948F900CFA161 /* Chromatism+Internal.h */,
 				8F3AB9221781C0BA0023348A /* Chromatism.m */,
-				8F3AB94D1781C1250023348A /* Helpers.h */,
-				8F3AB94E1781C1250023348A /* Helpers.m */,
+				8F0F6278193658F600E8F781 /* NSIndexSet+JLAdditions.h */,
+				8F0F6279193658F600E8F781 /* NSIndexSet+JLAdditions.m */,
 				8FE2796317C3842900DD933A /* UIColor+Chromatism.h */,
 				8FE2796417C3842900DD933A /* UIColor+Chromatism.m */,
 			);
@@ -241,11 +243,12 @@
 				8FA0CB0F1795F41B00FF8EB1 /* JLTextView.h in Headers */,
 				8F54EF0E1781C776008C1609 /* Chromatism.h in Headers */,
 				8F391713184FAC640022D33F /* JLCTokenizer.h in Headers */,
-				8F54EF101781C788008C1609 /* Helpers.h in Headers */,
 				8FE2796517C3842900DD933A /* UIColor+Chromatism.h in Headers */,
+				8F0F627A193658F600E8F781 /* NSIndexSet+JLAdditions.h in Headers */,
 				8F54EF111781C788008C1609 /* JLScope.h in Headers */,
 				8FFEB27D183AD6740032C9FB /* JLObjectiveCTokenizer.h in Headers */,
 				8FFEB283183AD8B70032C9FB /* JLTokenizer+Additions.h in Headers */,
+				8F0F627D19365A7B00E8F781 /* ChromatismMacros.h in Headers */,
 				8F54EF131781C788008C1609 /* JLTextViewController.h in Headers */,
 				8F54EF141781C788008C1609 /* JLTokenizer.h in Headers */,
 				8F54EF151781C788008C1609 /* JLTokenPattern.h in Headers */,
@@ -343,10 +346,10 @@
 				8F391714184FAC640022D33F /* JLCTokenizer.m in Sources */,
 				8FE2796617C3842900DD933A /* UIColor+Chromatism.m in Sources */,
 				8FA0CB101795F41B00FF8EB1 /* JLTextView.m in Sources */,
-				8F54EF1F1781CD87008C1609 /* Helpers.m in Sources */,
 				8F54EF221781CD87008C1609 /* JLTextViewController.m in Sources */,
 				8F54EF231781CD87008C1609 /* JLTokenizer.m in Sources */,
 				8F54EF1E1781CD87008C1609 /* Chromatism.m in Sources */,
+				8F0F627B193658F600E8F781 /* NSIndexSet+JLAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F3AB9381781C0BB0023348A /* ChromatismTests.m in Sources */,
-				3260A15417A8845F008792E6 /* Helpers.m in Sources */,
 				3260A15617A884EC008792E6 /* JLTokenizerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
