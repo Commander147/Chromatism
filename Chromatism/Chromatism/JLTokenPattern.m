@@ -35,14 +35,32 @@
 
 #pragma mark - Initialization
 
-static NSCache *cache;
-
 + (instancetype)tokenPatternWithRegularExpression:(NSRegularExpression *)expression;
 {
     JLTokenPattern *tokenPattern = [JLTokenPattern new];
     tokenPattern.expression = expression;
     
     return tokenPattern;
+}
+
++ (instancetype)token:(NSString *)type withPattern:(NSString *)pattern andScope:(JLScope *)scope
+{
+    NSParameterAssert(type);
+    NSParameterAssert(pattern);
+    NSParameterAssert(scope);
+    
+    NSRegularExpression *expression = [cache objectForKey:pattern];
+    if (!expression) {
+        expression = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionAnchorsMatchLines error:NULL];
+        [cache setObject:expression forKey:pattern];
+    }
+    
+    JLTokenPattern *token = [JLTokenPattern tokenPatternWithRegularExpression:expression];
+    token.type = type;
+    
+    [token addScope:scope];
+    
+    return token;
 }
 
 - (id)init
@@ -74,6 +92,11 @@ static NSCache *cache;
         }];
     }];
 }
+
+#pragma mark - NSRegularExpressionCache
+
+static NSCache *cache;
+
 
 #pragma mark - Debugging
 

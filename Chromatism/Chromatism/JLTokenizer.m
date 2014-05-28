@@ -44,7 +44,6 @@
 
 @interface JLTokenizer ()
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
-@property (nonatomic, strong) NSMutableDictionary *expressions;
 @end
 
 @implementation JLTokenizer
@@ -184,19 +183,8 @@
     NSParameterAssert(pattern);
     NSParameterAssert(scope);
     
-    NSRegularExpression *expression = self.expressions[pattern];
-    if (expression) {
-        self.expressions[pattern] = expression;
-    } else {
-        expression = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionAnchorsMatchLines error:NULL];
-        self.expressions[pattern] = expression;
-    }
-    
-    JLTokenPattern *token = [JLTokenPattern tokenPatternWithRegularExpression:expression];
-    token.type = type;
+    JLTokenPattern *token = [JLTokenPattern token:type withPattern:pattern andScope:scope];
     token.color = self.colors[type];
-
-    [token addScope:scope];
     
     return token;
 }

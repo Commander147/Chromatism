@@ -27,6 +27,7 @@
 @interface JLTokenPattern : JLScope
 
 + (instancetype)tokenPatternWithRegularExpression:(NSRegularExpression *)expressino;;
++ (instancetype)token:(NSString *)type withPattern:(NSString *)pattern andScope:(JLScope *)scope; // Caches NSRegularExpressions
 
 @property (nonatomic, strong) NSRegularExpression *expression;
 
